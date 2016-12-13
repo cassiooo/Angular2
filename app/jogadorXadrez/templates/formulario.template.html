@@ -1,0 +1,57 @@
+<h2>Exemplo de usuários</h2>
+          <div class="form-group col-md-3">
+            <label>Nome</label>
+            <input class="form-control" [(ngModel)]="jogadorXadrezObject.nome"   />
+          </div>
+          <div class="form-group col-md-3">
+            <label>Idade</label>
+            <input class="form-control" [(ngModel)]="jogadorXadrezObject.idade"   />
+          </div>
+          <div class="form-group col-md-3">
+            <label>País</label>
+            <input class="form-control" [(ngModel)]="jogadorXadrezObject.pais"   />
+          </div>
+          <div class="form-group col-md-3">
+            <label>Rating</label>
+            <input class="form-control" [(ngModel)]="jogadorXadrezObject.rating"   />
+          </div>
+          <div *ngIf="!edit" class="form-group col-md-3">
+            <button class="btn btn-primary" (click)="salvarJogadorXadrez(jogadorXadrezObject)">Salvar</button>
+          </div>
+          <div *ngIf="edit" class="form-group col-md-3">
+            <button class="btn btn-primary" (click)="editarJogadorXadrez(jogadorXadrezObject, true)">Editar</button>
+          </div>
+          <table class="table table-hover table-striped">
+             <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>País</th>
+                <th>Rating</th>
+                <th></th>
+                <th></th>
+             </tr>
+             <tr *ngFor="let jogadorXadrez of jogadoresXadrez; let i = index">
+                <td>
+                    {{jogadorXadrez._id}}
+                </td>
+                <td>
+                    {{jogadorXadrez.nome}}
+                </td>
+                <td>
+                    {{jogadorXadrez.idade}}
+                </td>
+                <td>
+                    {{jogadorXadrez.pais}}
+                </td>
+                <td>
+                    {{jogadorXadrez.rating}}
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)=editarJogadorXadrez(jogadorXadrez)>Editar</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deletarJogadorXadrez(jogadorXadrez._id,i)">Deletar</button>
+                </td>
+             </tr>
+          </table>

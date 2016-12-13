@@ -1,0 +1,25 @@
+<h2>Listagem de usuários</h2>
+    <table class="table table-hover table-striped">
+       <tr>
+          <th>
+              Id
+          </th>
+          <th>
+              Nome
+          </th>
+          <th>
+              Idade
+          </th>
+       </tr>
+       <tr *ngFor="let usuario of usuarios">
+          <th>
+              {{usuario.id}}
+          </th>
+          <th>
+              {{usuario.nome}}
+          </th>
+          <th>
+              {{usuario.idade}}
+          </th>
+       </tr>
+    </table>
