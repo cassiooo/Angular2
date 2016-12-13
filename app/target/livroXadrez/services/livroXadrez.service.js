@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var Observable_1 = require('rxjs/Observable');
-var http_2 = require('@angular/http');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
+var http_2 = require("@angular/http");
 var LivroXadrezService = (function () {
     function LivroXadrezService(http) {
         this.http = http;
@@ -54,11 +54,11 @@ var LivroXadrezService = (function () {
         console.error(errMsg);
         return Observable_1.Observable.throw(errMsg);
     };
-    LivroXadrezService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], LivroXadrezService);
     return LivroXadrezService;
 }());
+LivroXadrezService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], LivroXadrezService);
 exports.LivroXadrezService = LivroXadrezService;
 //# sourceMappingURL=livroXadrez.service.js.map

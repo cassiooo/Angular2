@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var AlunoService = (function () {
     function AlunoService() {
     }
@@ -18,11 +18,11 @@ var AlunoService = (function () {
         ];
         return Promise.resolve(this.alunos);
     };
-    AlunoService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], AlunoService);
     return AlunoService;
 }());
+AlunoService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], AlunoService);
 exports.AlunoService = AlunoService;
 //# sourceMappingURL=aluno.service.js.map

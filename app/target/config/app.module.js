@@ -8,30 +8,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var usuario_component_1 = require('../usuario/components/usuario.component');
-var jogadorXadrez_component_1 = require('../jogadorXadrez/components/jogadorXadrez.component');
-var livroXadrez_component_1 = require('../livroXadrez/components/livroXadrez.component');
-var perfil_component_1 = require('../perfil/components/perfil.component');
-var forms_1 = require('@angular/forms');
-var aluno_component_1 = require('../aluno/components/aluno.component');
-var http_1 = require('@angular/http');
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var app_component_1 = require("./app.component");
+var usuario_component_1 = require("../usuario/components/usuario.component");
+var jogadorXadrez_component_1 = require("../jogadorXadrez/components/jogadorXadrez.component");
+var livroXadrez_component_1 = require("../livroXadrez/components/livroXadrez.component");
+var perfil_component_1 = require("../perfil/components/perfil.component");
+var forms_1 = require("@angular/forms");
+var aluno_component_1 = require("../aluno/components/aluno.component");
+var http_1 = require("@angular/http");
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
-            //Adicionar essa linha
-            declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, jogadorXadrez_component_1.JogadorXadrezComponent, livroXadrez_component_1.LivroXadrezComponent],
-            //Adicionar essa linha
-            bootstrap: [app_component_1.AppComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
+        //Adicionar essa linha
+        declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, jogadorXadrez_component_1.JogadorXadrezComponent, livroXadrez_component_1.LivroXadrezComponent],
+        //Adicionar essa linha
+        bootstrap: [app_component_1.AppComponent]
+    }),
+    __metadata("design:paramtypes", [])
+], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

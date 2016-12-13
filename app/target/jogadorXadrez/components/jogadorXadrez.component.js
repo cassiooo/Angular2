@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var jogadorXadrez_1 = require('../class/jogadorXadrez');
-var jogadorXadrez_service_1 = require('../services/jogadorXadrez.service');
+var core_1 = require("@angular/core");
+var jogadorXadrez_1 = require("../class/jogadorXadrez");
+var jogadorXadrez_service_1 = require("../services/jogadorXadrez.service");
 var JogadorXadrezComponent = (function () {
     function JogadorXadrezComponent(jogadorXadrezService) {
         this.jogadorXadrezService = jogadorXadrezService;
@@ -60,15 +60,15 @@ var JogadorXadrezComponent = (function () {
     JogadorXadrezComponent.prototype.ngOnInit = function () {
         this.listar();
     };
-    JogadorXadrezComponent = __decorate([
-        core_1.Component({
-            selector: 'jogadorXadrez',
-            templateUrl: 'app/jogadorXadrez/templates/formulario.template.html',
-            providers: [jogadorXadrez_service_1.JogadorXadrezService]
-        }), 
-        __metadata('design:paramtypes', [jogadorXadrez_service_1.JogadorXadrezService])
-    ], JogadorXadrezComponent);
     return JogadorXadrezComponent;
 }());
+JogadorXadrezComponent = __decorate([
+    core_1.Component({
+        selector: 'jogadorXadrez',
+        templateUrl: 'app/jogadorXadrez/templates/formulario.template.html',
+        providers: [jogadorXadrez_service_1.JogadorXadrezService]
+    }),
+    __metadata("design:paramtypes", [jogadorXadrez_service_1.JogadorXadrezService])
+], JogadorXadrezComponent);
 exports.JogadorXadrezComponent = JogadorXadrezComponent;
 //# sourceMappingURL=jogadorXadrez.component.js.map

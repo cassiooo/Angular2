@@ -8,14 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var usuario_1 = require('../class/usuario');
-var usuario_service_1 = require('../services/usuario.service');
+var core_1 = require("@angular/core");
+var usuario_1 = require("../class/usuario");
+var usuario_service_1 = require("../services/usuario.service");
 var UsuarioComponent = (function () {
     function UsuarioComponent(usuarioService) {
         this.usuarioService = usuarioService;
         this.usuarioObject = new usuario_1.Usuario();
         this.edit = false;
+        this.perfis = [
+            { nome: "Administrador" }, { nome: "Editor" }
+        ];
     }
     UsuarioComponent.prototype.listar = function () {
         var _this = this;
@@ -40,6 +43,7 @@ var UsuarioComponent = (function () {
     UsuarioComponent.prototype.popularLista = function (usuario) {
         this.usuarios.push(usuario);
         this.usuarioObject = new usuario_1.Usuario();
+        this.usuarioObject.perfil = { nome: "" };
     };
     UsuarioComponent.prototype.editarUsuario = function (usuario, persistir) {
         var _this = this;
@@ -56,20 +60,22 @@ var UsuarioComponent = (function () {
     };
     UsuarioComponent.prototype.atualizarFormulario = function () {
         this.usuarioObject = new usuario_1.Usuario();
+        this.usuarioObject.perfil = { nome: "" };
         this.edit = false;
     };
     UsuarioComponent.prototype.ngOnInit = function () {
         this.listar();
+        this.usuarioObject.perfil = { nome: "" };
     };
-    UsuarioComponent = __decorate([
-        core_1.Component({
-            selector: 'usuario',
-            templateUrl: 'app/usuario/templates/formulario.template.html',
-            providers: [usuario_service_1.UsuarioService]
-        }), 
-        __metadata('design:paramtypes', [usuario_service_1.UsuarioService])
-    ], UsuarioComponent);
     return UsuarioComponent;
 }());
+UsuarioComponent = __decorate([
+    core_1.Component({
+        selector: 'usuario',
+        templateUrl: 'app/usuario/templates/formulario.template.html',
+        providers: [usuario_service_1.UsuarioService]
+    }),
+    __metadata("design:paramtypes", [usuario_service_1.UsuarioService])
+], UsuarioComponent);
 exports.UsuarioComponent = UsuarioComponent;
 //# sourceMappingURL=usuario.component.js.map

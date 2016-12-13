@@ -1,11 +1,19 @@
-<h2>Exemplo de usuários</h2>
+<h2>Usuários</h2>
           <div class="form-group col-md-6">
             <label>Nome</label>
             <input class="form-control" [(ngModel)]="usuarioObject.nome"   />
           </div>
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-3">
             <label>Idade</label>
             <input class="form-control" [(ngModel)]="usuarioObject.idade"   />
+          </div>
+          <div class="form-group col-md-3">
+          <label>Perfil</label>
+            <select class="form-control" [(ngModel)]="usuarioObject.perfil.nome">
+                <option *ngFor="let perfil of perfis" [value]="perfil.nome">
+                    {{perfil.nome}}
+                </option>
+            </select>
           </div>
           <div *ngIf="!edit" class="form-group col-md-3">
             <button class="btn btn-primary" (click)="salvarUsuario(usuarioObject)">Salvar</button>
@@ -25,7 +33,9 @@
                     Idade
                 </th>
                 <th>
-
+                    Perfil
+                </th>
+                <th>
                 </th>
                 <th>
 
@@ -41,6 +51,9 @@
                 <td>
                     {{usuario.idade}}
                 </td>
+                <td>
+                    {{usuario.perfil.nome}}
+                </td>                
                 <td>
                     <button class="btn btn-primary" (click)=editarUsuario(usuario)>Editar</button>
                 </td>

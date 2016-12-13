@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../class/usuario';
+import { Perfil } from '../../perfil/class/perfil';
 import { UsuarioService } from '../services/usuario.service';
 
 @Component({
@@ -14,6 +15,9 @@ export class UsuarioComponent implements OnInit {
     edit = false;
     errorMessage: string;
     i: number;
+    perfis = [
+        {nome: "Administrador"} , {nome: "Editor"}
+    ];
 
     constructor(private usuarioService: UsuarioService) {
     }
@@ -46,6 +50,7 @@ export class UsuarioComponent implements OnInit {
     popularLista(usuario: Usuario) {
         this.usuarios.push(usuario);
         this.usuarioObject = new Usuario();
+        this.usuarioObject.perfil = {nome:""};
     }
 
     editarUsuario(usuario: Usuario, persistir = false): void {
@@ -63,11 +68,13 @@ export class UsuarioComponent implements OnInit {
 
     atualizarFormulario(): void {
         this.usuarioObject = new Usuario();
+        this.usuarioObject.perfil = {nome:""};        
         this.edit = false;
     }
 
     ngOnInit(): void {
         this.listar();
+        this.usuarioObject.perfil = {nome:""};                
     }
 
 }

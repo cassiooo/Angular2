@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var livroXadrez_1 = require('../class/livroXadrez');
-var livroXadrez_service_1 = require('../services/livroXadrez.service');
+var core_1 = require("@angular/core");
+var livroXadrez_1 = require("../class/livroXadrez");
+var livroXadrez_service_1 = require("../services/livroXadrez.service");
 var LivroXadrezComponent = (function () {
     function LivroXadrezComponent(livroXadrezService) {
         this.livroXadrezService = livroXadrezService;
@@ -60,15 +60,15 @@ var LivroXadrezComponent = (function () {
     LivroXadrezComponent.prototype.ngOnInit = function () {
         this.listar();
     };
-    LivroXadrezComponent = __decorate([
-        core_1.Component({
-            selector: 'livroXadrez',
-            templateUrl: 'app/livroXadrez/templates/livroXadrez.template.html',
-            providers: [livroXadrez_service_1.LivroXadrezService]
-        }), 
-        __metadata('design:paramtypes', [livroXadrez_service_1.LivroXadrezService])
-    ], LivroXadrezComponent);
     return LivroXadrezComponent;
 }());
+LivroXadrezComponent = __decorate([
+    core_1.Component({
+        selector: 'livroXadrez',
+        templateUrl: 'app/livroXadrez/templates/livroXadrez.template.html',
+        providers: [livroXadrez_service_1.LivroXadrezService]
+    }),
+    __metadata("design:paramtypes", [livroXadrez_service_1.LivroXadrezService])
+], LivroXadrezComponent);
 exports.LivroXadrezComponent = LivroXadrezComponent;
 //# sourceMappingURL=livroXadrez.component.js.map

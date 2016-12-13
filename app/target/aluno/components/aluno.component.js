@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var aluno_1 = require('../class/aluno');
-var aluno_service_1 = require('../services/aluno.service');
+var core_1 = require("@angular/core");
+var aluno_1 = require("../class/aluno");
+var aluno_service_1 = require("../services/aluno.service");
 var AlunoComponent = (function () {
     function AlunoComponent(alunoService) {
         this.alunoService = alunoService;
@@ -40,15 +40,15 @@ var AlunoComponent = (function () {
     AlunoComponent.prototype.ngOnInit = function () {
         this.listar();
     };
-    AlunoComponent = __decorate([
-        core_1.Component({
-            selector: 'aluno',
-            templateUrl: 'app/aluno/templates/aluno.template.html',
-            providers: [aluno_service_1.AlunoService]
-        }), 
-        __metadata('design:paramtypes', [aluno_service_1.AlunoService])
-    ], AlunoComponent);
     return AlunoComponent;
 }());
+AlunoComponent = __decorate([
+    core_1.Component({
+        selector: 'aluno',
+        templateUrl: 'app/aluno/templates/aluno.template.html',
+        providers: [aluno_service_1.AlunoService]
+    }),
+    __metadata("design:paramtypes", [aluno_service_1.AlunoService])
+], AlunoComponent);
 exports.AlunoComponent = AlunoComponent;
 //# sourceMappingURL=aluno.component.js.map

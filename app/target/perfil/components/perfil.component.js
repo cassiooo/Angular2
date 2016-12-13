@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var PerfilComponent = (function () {
     function PerfilComponent() {
         this.perfis = this.listar();
@@ -18,14 +18,14 @@ var PerfilComponent = (function () {
             { nome: 'Analista de Requisitos' }
         ];
     };
-    PerfilComponent = __decorate([
-        core_1.Component({
-            selector: 'perfil',
-            templateUrl: 'app/perfil/templates/perfil.template.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], PerfilComponent);
     return PerfilComponent;
 }());
+PerfilComponent = __decorate([
+    core_1.Component({
+        selector: 'perfil',
+        templateUrl: 'app/perfil/templates/perfil.template.html'
+    }),
+    __metadata("design:paramtypes", [])
+], PerfilComponent);
 exports.PerfilComponent = PerfilComponent;
 //# sourceMappingURL=perfil.component.js.map
