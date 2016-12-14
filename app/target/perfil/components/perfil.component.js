@@ -9,23 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var perfil_1 = require("../class/perfil");
+var perfil_service_1 = require("../services/perfil.service");
 var PerfilComponent = (function () {
-    function PerfilComponent() {
-        this.perfis = this.listar();
+    function PerfilComponent(perfilService) {
+        this.perfilService = perfilService;
+        this.perfilObject = new perfil_1.Perfil();
     }
     PerfilComponent.prototype.listar = function () {
-        return [
-            { nome: 'Analista de Requisitos' }
-        ];
+        var _this = this;
+        this.perfilService.getListPerfil()
+            .subscribe(function (perfis) { return _this.perfis = perfis; }, function (error) { return _this.errorMessage = error; });
+    };
+    PerfilComponent.prototype.ngOnInit = function () {
+        this.listar();
     };
     return PerfilComponent;
 }());
 PerfilComponent = __decorate([
     core_1.Component({
         selector: 'perfil',
-        templateUrl: 'app/perfil/templates/perfil.template.html'
+        templateUrl: 'app/perfil/templates/perfil.template.html',
+        providers: [perfil_service_1.PerfilService]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [perfil_service_1.PerfilService])
 ], PerfilComponent);
 exports.PerfilComponent = PerfilComponent;
 //# sourceMappingURL=perfil.component.js.map

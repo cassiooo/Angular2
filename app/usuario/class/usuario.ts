@@ -4,5 +4,7 @@ import { Pessoa } from './pessoa'
     _id: string;
     perfil:{
   	 nome:String
-  }
+  };
+  endereco:string;
+  cep:number;
 }

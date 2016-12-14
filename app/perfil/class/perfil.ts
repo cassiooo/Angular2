@@ -1,3 +1,4 @@
 export class Perfil{
-    nome:string;
+     _id: Number;
+    nome: String;
 }

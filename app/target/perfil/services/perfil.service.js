@@ -12,49 +12,36 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var Observable_1 = require("rxjs/Observable");
 var http_2 = require("@angular/http");
-var UsuarioService = (function () {
-    function UsuarioService(http) {
+var PerfilService = (function () {
+    function PerfilService(http) {
         this.http = http;
-        this.usuarioUrl = 'https://cassiooo.herokuapp.com/usuario';
+        this.perfilUrl = 'https://cassiooo.herokuapp.com/perfil';
     }
-    UsuarioService.prototype.getListUsuario = function () {
-        /*this.usuarios = [
-            { id: 11, nome: 'João', idade: 20 },
-            { id: 12, nome: 'Maria', idade: 24 },
-            { id: 13, nome: 'Joana', idade: 29 },
-            { id: 14, nome: 'José', idade: 60 },
-            { id: 15, nome: 'Magneta', idade: 89 },
-            { id: 16, nome: 'RubberMan', idade: 21 },
-            { id: 17, nome: 'Dynama', idade: 29 },
-            { id: 18, nome: 'Dr IQ', idade: 26 },
-            { id: 19, nome: 'Nataniel', idade: 25 },
-            { id: 20, nome: 'Jéssica', idade: 23 }
-        ];
-        return Promise.resolve(this.usuarios);*/
-        return this.http.get(this.usuarioUrl)
+    PerfilService.prototype.getListPerfil = function () {
+        return this.http.get(this.perfilUrl)
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
-    UsuarioService.prototype.deletarUsuario = function (id) {
+    PerfilService.prototype.deletarPerfil = function (id) {
         var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
         var options = new http_2.RequestOptions({ headers: headers });
-        return this.http.delete(this.usuarioUrl + "/" + id, options);
+        return this.http.delete(this.perfilUrl + "/" + id, options);
     };
-    UsuarioService.prototype.salvarUsuario = function (usuario) {
+    PerfilService.prototype.salvarPerfil = function (perfil) {
         var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
         var options = new http_2.RequestOptions({ headers: headers });
-        if (!usuario._id) {
-            return this.http.post(this.usuarioUrl, usuario, options)
+        if (!perfil._id) {
+            return this.http.post(this.perfilUrl, perfil, options)
                 .map(function (res) { return res.json(); })
                 .catch(this.handleError);
         }
         else {
-            return this.http.put(this.usuarioUrl + "/" + usuario._id, usuario, options)
+            return this.http.put(this.perfilUrl + "/" + perfil._id, perfil, options)
                 .map(function (res) { return res.json(); })
                 .catch(this.handleError);
         }
     };
-    UsuarioService.prototype.handleError = function (error) {
+    PerfilService.prototype.handleError = function (error) {
         var errMsg;
         if (error instanceof http_1.Response) {
             var body = error.json() || '';
@@ -67,11 +54,11 @@ var UsuarioService = (function () {
         console.error(errMsg);
         return Observable_1.Observable.throw(errMsg);
     };
-    return UsuarioService;
+    return PerfilService;
 }());
-UsuarioService = __decorate([
+PerfilService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
-], UsuarioService);
-exports.UsuarioService = UsuarioService;
-//# sourceMappingURL=usuario.service.js.map
+], PerfilService);
+exports.PerfilService = PerfilService;
+//# sourceMappingURL=perfil.service.js.map
