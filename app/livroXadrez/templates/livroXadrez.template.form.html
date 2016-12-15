@@ -1,0 +1,31 @@
+<h2>Cadastro de Livro</h2>
+<div class="form-group col-md-6">
+    <label>Título</label>
+    <input class="form-control" [(ngModel)]="livroXadrezObject.titulo"   />
+</div>
+<div class="form-group col-md-3">
+    <label>Autor</label>
+    <input class="form-control" [(ngModel)]="livroXadrezObject.autor"   />
+</div>
+<div class="form-group col-md-3">
+    <label>Categoria</label>
+    <input class="form-control" [(ngModel)]="livroXadrezObject.categoria"   />
+</div>
+<div class="form-group col-md-3">
+    <label>Ano</label>
+    <input class="form-control" [(ngModel)]="livroXadrezObject.ano"   />
+</div>
+<div class="form-group col-md-3">
+    <label>Páginas</label>
+    <input class="form-control" [(ngModel)]="livroXadrezObject.paginas"   />
+</div>
+<div class="form-group col-md-3">
+    <label>ISBN</label>
+    <input class="form-control" [(ngModel)]="livroXadrezObject.isbn"   />
+</div>
+<div class="form-group col-md-1">
+    <a class="btn btn-default" routerLink="/livroXadrez">Voltar</a>
+</div>
+<div *ngIf="!edit" class="form-group col-md-1">
+    <button class="btn btn-primary" (click)="salvar(livroXadrezObject)">Salvar</button>
+</div>

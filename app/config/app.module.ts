@@ -5,6 +5,7 @@ import { UsuarioComponent } from '../usuario/components/usuario.component';
 import { JogadorXadrezComponent } from '../jogadorXadrez/components/jogadorXadrez.component';
 import { JogadorXadrezComponentForm } from '../jogadorXadrez/components/jogadorXadrez.component.form';
 import { LivroXadrezComponent } from '../livroXadrez/components/livroXadrez.component';
+import { LivroXadrezComponentForm } from '../livroXadrez/components/livroXadrez.component.form';
 import { PerfilComponent } from '../perfil/components/perfil.component';
 import { PerfilComponentForm } from '../perfil/components/perfil.component.form';
 import { HomeComponent } from '../home/components/home.component'
@@ -16,7 +17,7 @@ import { routing } from './routes'
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, routing ],
   //Adicionar essa linha
-  declarations: [ AppComponent, UsuarioComponent, PerfilComponent, AlunoComponent, JogadorXadrezComponent, LivroXadrezComponent, HomeComponent, PerfilComponentForm, JogadorXadrezComponentForm ],
+  declarations: [ AppComponent, UsuarioComponent, PerfilComponent, AlunoComponent, JogadorXadrezComponent, LivroXadrezComponent, HomeComponent, PerfilComponentForm, JogadorXadrezComponentForm, LivroXadrezComponentForm ],
   //Adicionar essa linha
   bootstrap:    [ AppComponent ]
   

@@ -11,6 +11,13 @@ export class LivroXadrezService {
 
     constructor(private http: Http) { }
 
+    get(id: string): Observable<LivroXadrez> {
+        return this.http.get(this.livroXadrezUrl + "/" + id)
+            .map(res => res.json())
+            .catch(this.handleError);
+    }
+
+
     getListLivroXadrez(): Observable<LivroXadrez[]> {
 
         return this.http.get(this.livroXadrezUrl)

@@ -6,6 +6,8 @@ var perfil_component_1 = require("../perfil/components/perfil.component");
 var perfil_component_form_1 = require("../perfil/components/perfil.component.form");
 var jogadorXadrez_component_1 = require("../jogadorXadrez/components/jogadorXadrez.component");
 var jogadorXadrez_component_form_1 = require("../jogadorXadrez/components/jogadorXadrez.component.form");
+var livroXadrez_component_1 = require("../livroXadrez/components/livroXadrez.component");
+var livroXadrez_component_form_1 = require("../livroXadrez/components/livroXadrez.component.form");
 //Configurações da rota
 exports.routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +19,10 @@ exports.routes = [
     { path: 'perfil-edit/:id', component: perfil_component_form_1.PerfilComponentForm },
     { path: 'jogadorXadrez', component: jogadorXadrez_component_1.JogadorXadrezComponent },
     { path: 'jogadorXadrez-add', component: jogadorXadrez_component_form_1.JogadorXadrezComponentForm },
-    { path: 'jogadorXadrez-edit/:id', component: jogadorXadrez_component_form_1.JogadorXadrezComponentForm }
+    { path: 'jogadorXadrez-edit/:id', component: jogadorXadrez_component_form_1.JogadorXadrezComponentForm },
+    { path: 'livroXadrez', component: livroXadrez_component_1.LivroXadrezComponent },
+    { path: 'livroXadrez-add', component: livroXadrez_component_form_1.LivroXadrezComponentForm },
+    { path: 'livroXadrez-edit/:id', component: livroXadrez_component_form_1.LivroXadrezComponentForm }
 ];
 exports.routing = router_1.RouterModule.forRoot(exports.routes);
 //# sourceMappingURL=routes.js.map

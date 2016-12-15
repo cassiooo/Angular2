@@ -1,69 +1,40 @@
 <h2>Livros de Xadrez</h2>
-          <div class="form-group col-md-6">
-            <label>Título</label>
-            <input class="form-control" [(ngModel)]="livroXadrezObject.titulo"   />
-          </div>
-          <div class="form-group col-md-3">
-            <label>Autor</label>
-            <input class="form-control" [(ngModel)]="livroXadrezObject.autor"   />
-          </div>
-          <div class="form-group col-md-3">
-            <label>Categoria</label>
-            <input class="form-control" [(ngModel)]="livroXadrezObject.categoria"   />
-          </div>
-          <div class="form-group col-md-3">
-            <label>Ano</label>
-            <input class="form-control" [(ngModel)]="livroXadrezObject.ano"   />
-          </div>
-          <div class="form-group col-md-3">
-            <label>Páginas</label>
-            <input class="form-control" [(ngModel)]="livroXadrezObject.paginas"   />
-          </div>
-          <div class="form-group col-md-3">
-            <label>ISBN</label>
-            <input class="form-control" [(ngModel)]="livroXadrezObject.isbn"   />
-          </div>
-          <div *ngIf="!edit" class="form-group col-md-3">
-            <button class="btn btn-primary" (click)="salvarLivroXadrez(livroXadrezObject)">Salvar</button>
-          </div>
-          <div *ngIf="edit" class="form-group col-md-3">
-            <button class="btn btn-primary" (click)="editarLivroXadrez(livroXadrezObject, true)">Editar</button>
-          </div>
-          <table class="table table-hover table-striped">
-             <tr>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Categoria</th>
-                <th>Ano</th>
-                <th>Páginas</th>
-                <th>ISBN</th>
-                <th></th>
-                <th></th>
-             </tr>
-             <tr *ngFor="let livroXadrez of livrosXadrez; let i = index">
-                <td>
-                    {{livroXadrez.titulo}}
-                </td>
-                <td>
-                    {{livroXadrez.autor}}
-                </td>
-                <td>
-                    {{livroXadrez.categoria}}
-                </td>
-                <td>
-                    {{livroXadrez.ano}}
-                </td>
-                <td>
-                    {{livroXadrez.paginas}}
-                </td>
-                <td>
-                    {{livroXadrez.isbn}}
-                </td>
-                <td>
-                    <button class="btn btn-primary" (click)=editarLivroXadrez(livroXadrez)>Editar</button>
-                </td>
-                <td>
-                    <button class="btn btn-danger" (click)="deletarLivroXadrez(livroXadrez._id,i)">Deletar</button>
-                </td>
-             </tr>
-          </table>
+<a class="btn btn-primary" routerLink="/livroXadrez-add">Novo Livro</a>  
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Categoria</th>
+        <th>Ano</th>
+        <th>Páginas</th>
+        <th>ISBN</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let livroXadrez of livrosXadrez; let i = index">
+        <td>
+            {{livroXadrez.titulo}}
+        </td>
+        <td>
+            {{livroXadrez.autor}}
+        </td>
+        <td>
+            {{livroXadrez.categoria}}
+        </td>
+        <td>
+            {{livroXadrez.ano}}
+        </td>
+        <td>
+            {{livroXadrez.paginas}}
+        </td>
+        <td>
+            {{livroXadrez.isbn}}
+        </td>
+        <td>
+            <a class="btn btn-primary" routerLink="/livroXadrez-edit/{{livroXadrez._id}}">Editar</a>
+        </td>
+        <td>
+            <button class="btn btn-danger" (click)="deletarLivroXadrez(livroXadrez._id,i)">Deletar</button>
+        </td>
+    </tr>
+</table>

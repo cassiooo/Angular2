@@ -17,6 +17,11 @@ var LivroXadrezService = (function () {
         this.http = http;
         this.livroXadrezUrl = 'https://cassiooo.herokuapp.com/livroXadrez';
     }
+    LivroXadrezService.prototype.get = function (id) {
+        return this.http.get(this.livroXadrezUrl + "/" + id)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
     LivroXadrezService.prototype.getListLivroXadrez = function () {
         return this.http.get(this.livroXadrezUrl)
             .map(function (res) { return res.json(); })
