@@ -17,6 +17,11 @@ var JogadorXadrezService = (function () {
         this.http = http;
         this.jogadorXadrezUrl = 'https://cassiooo.herokuapp.com/jogadorXadrez';
     }
+    JogadorXadrezService.prototype.get = function (id) {
+        return this.http.get(this.jogadorXadrezUrl + "/" + id)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
     JogadorXadrezService.prototype.getListJogadorXadrez = function () {
         return this.http.get(this.jogadorXadrezUrl)
             .map(function (res) { return res.json(); })

@@ -13,11 +13,15 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var usuario_component_1 = require("../usuario/components/usuario.component");
 var jogadorXadrez_component_1 = require("../jogadorXadrez/components/jogadorXadrez.component");
+var jogadorXadrez_component_form_1 = require("../jogadorXadrez/components/jogadorXadrez.component.form");
 var livroXadrez_component_1 = require("../livroXadrez/components/livroXadrez.component");
 var perfil_component_1 = require("../perfil/components/perfil.component");
+var perfil_component_form_1 = require("../perfil/components/perfil.component.form");
+var home_component_1 = require("../home/components/home.component");
 var forms_1 = require("@angular/forms");
 var aluno_component_1 = require("../aluno/components/aluno.component");
 var http_1 = require("@angular/http");
+var routes_1 = require("./routes");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,9 +29,9 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, routes_1.routing],
         //Adicionar essa linha
-        declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, jogadorXadrez_component_1.JogadorXadrezComponent, livroXadrez_component_1.LivroXadrezComponent],
+        declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, jogadorXadrez_component_1.JogadorXadrezComponent, livroXadrez_component_1.LivroXadrezComponent, home_component_1.HomeComponent, perfil_component_form_1.PerfilComponentForm, jogadorXadrez_component_form_1.JogadorXadrezComponentForm],
         //Adicionar essa linha
         bootstrap: [app_component_1.AppComponent]
     }),

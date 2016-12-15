@@ -1,0 +1,23 @@
+<h2>Novo Jogador</h2>
+<div class="form-group col-md-3">
+    <label>Nome</label>
+    <input class="form-control" [(ngModel)]="jogadorXadrezObject.nome"   />
+</div>
+<div class="form-group col-md-3">
+    <label>Idade</label>
+    <input class="form-control" [(ngModel)]="jogadorXadrezObject.idade"   />
+</div>
+<div class="form-group col-md-3">
+    <label>País</label>
+    <input class="form-control" [(ngModel)]="jogadorXadrezObject.pais"   />
+</div>
+<div class="form-group col-md-3">
+    <label>Rating</label>
+    <input class="form-control" [(ngModel)]="jogadorXadrezObject.rating"   />
+</div>
+<div class="form-group col-md-1">
+    <a class="btn btn-default" routerLink="/jogadorXadrez">Voltar</a>
+</div>
+<div *ngIf="!edit" class="form-group col-md-1">
+    <button class="btn btn-primary" (click)="salvar(jogadorXadrezObject)">Salvar</button>
+</div>

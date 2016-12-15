@@ -17,6 +17,16 @@ var PerfilService = (function () {
         this.http = http;
         this.perfilUrl = 'https://cassiooo.herokuapp.com/perfil';
     }
+    PerfilService.prototype.fetchAll = function () {
+        return this.http.get(this.perfilUrl)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    PerfilService.prototype.get = function (id) {
+        return this.http.get(this.perfilUrl + "/" + id)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
     PerfilService.prototype.getListPerfil = function () {
         return this.http.get(this.perfilUrl)
             .map(function (res) { return res.json(); })

@@ -9,7 +9,20 @@ export class PerfilService {
     private perfilUrl = 'https://cassiooo.herokuapp.com/perfil';
 
     constructor(private http: Http) { }
+    
+    fetchAll(): Observable<Perfil[]> {
 
+        return this.http.get(this.perfilUrl)
+            .map(res => res.json())
+            .catch(this.handleError);
+    }
+    
+    get(id: string): Observable<Perfil> {
+        return this.http.get(this.perfilUrl + "/" + id)
+            .map(res => res.json())
+            .catch(this.handleError);
+    }
+    
     getListPerfil(): Observable<Perfil[]> {
         return this.http.get(this.perfilUrl)
             .map(res => res.json())

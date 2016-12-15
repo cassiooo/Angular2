@@ -12,6 +12,7 @@ export class PerfilComponent implements OnInit {
     perfis: Perfil[];
     perfilObject = new Perfil();
     errorMessage: string;
+    public i: number;
     
     constructor(private perfilService: PerfilService) {
     }
@@ -22,7 +23,15 @@ export class PerfilComponent implements OnInit {
             perfis => this.perfis = perfis,
             error => this.errorMessage = <any>error);
     }
-
+    
+    deletar(id, i) {
+        this.i = i;
+        this.perfilService.deletarPerfil(id)
+            .subscribe(
+            success => this.perfis.splice(this.i, 1),
+            error => this.errorMessage = <any>error);
+    }
+    
     ngOnInit(): void {
         this.listar();
     }

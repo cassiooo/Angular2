@@ -10,7 +10,13 @@ export class JogadorXadrezService {
     private jogadorXadrezUrl = 'https://cassiooo.herokuapp.com/jogadorXadrez';
 
     constructor(private http: Http) { }
-
+    
+    get(id: string): Observable<JogadorXadrez> {
+        return this.http.get(this.jogadorXadrezUrl + "/" + id)
+            .map(res => res.json())
+            .catch(this.handleError);
+    }
+    
     getListJogadorXadrez(): Observable<JogadorXadrez[]> {
 
         return this.http.get(this.jogadorXadrezUrl)
@@ -38,7 +44,7 @@ export class JogadorXadrezService {
                 .catch(this.handleError);
         }
     }
-   
+
 
     private handleError(error: Response | any) {
         let errMsg: string;
